@@ -1,0 +1,34 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="150" cy="150" r="140" fill="#f5f5f5"/>
+  
+  <!-- Cart Body -->
+  <rect x="70" y="140" width="160" height="70" rx="15" fill="#ffe066" stroke="#23395d" stroke-width="6"/>
+  <rect x="85" y="155" width="130" height="40" rx="10" fill="#4169E1"/>
+  
+  <!-- Cart Handle -->
+  <rect x="220" y="110" width="15" height="60" rx="8" fill="#4169E1"/>
+  
+  <!-- Cart Wheels -->
+  <circle cx="95" cy="225" r="15" fill="#000000"/>
+  <circle cx="205" cy="225" r="15" fill="#000000"/>
+  <circle cx="95" cy="225" r="7" fill="#FF0000"/>
+  <circle cx="205" cy="225" r="7" fill="#FF0000"/>
+  
+  <!-- Umbrella -->
+  <path d="M80 90 Q150 10 220 90" fill="#FF0000"/>
+  <rect x="145" y="60" width="10" height="60" fill="#23395d"/>
+  <circle cx="150" cy="60" r="6" fill="#23395d"/>
+  
+  <!-- Boxes in Cart -->
+  <rect x="100" y="130" width="30" height="25" fill="#ff6f61"/>
+  <rect x="135" y="120" width="30" height="35" fill="#4ecdc4"/>
+  <rect x="170" y="135" width="25" height="20" fill="#FF0000"/>
+  
+  <!-- Decorative Stars -->
+  <polygon points="120,110 123,117 130,117 124,121 126,128 120,124 114,128 116,121 110,117 117,117" fill="#4169E1"/>
+  <polygon points="180,110 183,117 190,117 184,121 186,128 180,124 174,128 176,121 170,117 177,117" fill="#ffd166"/>
+  
+  <!-- Text -->
+  <text x="110" y="190" font-family="Open Sans & Roboto" font-size="32" fill="#fff" font-weight="bold">Swift</text>
+</svg>
