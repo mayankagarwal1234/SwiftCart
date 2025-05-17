@@ -10,7 +10,7 @@ import orderrouter from './routes/orderroute.js';
 
 // App Configuration
 const app = express();
-const PORT = process.env.PORT ||4000;
+const PORT = process.env.PORT || 4000;
 connectDB()
 connectCloudinary()
 
@@ -32,8 +32,6 @@ app.get('/', (req, res) => {
  app.use('/api/order',orderrouter)
 
 // Start the Server
-//app.listen(PORT, () => {
-  //console.log(`✅ Server running at http://localhost:${PORT}`);
-//});
-
-export default app;
+app.listen(PORT, () => {
+  console.log(`✅ Server running at http://localhost:${PORT}`);
+});
