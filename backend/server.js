@@ -10,7 +10,7 @@ import orderrouter from './routes/orderroute.js';
 
 // App Configuration
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = 4000;
 connectDB()
 connectCloudinary()
 
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data
 
 // Test Route
 app.get('/', (req, res) => {
-  res.send('Welcome to SwiftCart Backend 🚀');
+  res.send('Welcome to SwiftCart Backend ');
 });
 
 // Add your routes here
