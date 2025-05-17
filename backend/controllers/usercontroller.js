@@ -1,4 +1,4 @@
-import usermodel from "../models/usermodel.js"
+import userModel from "../models/userModel.js"
 import validator from "validator"
 import bcrypt from "bcrypt"
 import jwt from 'jsonwebtoken'
@@ -16,7 +16,7 @@ export const loginuser = async (req, res) => {
     const { email, password } = req.body;
 
     // Find user
-    const user = await usermodel.findOne({ email });
+    const user = await userModel.findOne({ email });
 
     if (!user) {
       return res.status(401).json({ sucess: false, msg: "User doesn't exists" });
@@ -48,7 +48,7 @@ export const registerUser = async (req, res) => {
 
 
     // Check for existing user
-    const userExists = await usermodel.findOne({ email });
+    const userExists = await userModel.findOne({ email });
     if (userExists) {
       return res.json({ success: false, msg: "User already exists" });
     }
@@ -67,7 +67,7 @@ export const registerUser = async (req, res) => {
 
 
     // Create user
-    const newUser = new usermodel({
+    const newUser = new userModel({
       name,
       email,
       password: hashedPassword,

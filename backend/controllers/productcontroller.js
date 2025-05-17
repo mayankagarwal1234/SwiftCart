@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary'
-import Productmodel from "../models/Productmodel.js";
+import productModel from "../models/productModel.js";
 
 //Add product
 export const addProduct = async (req, res) => {
@@ -32,7 +32,7 @@ export const addProduct = async (req, res) => {
             bestseller: bestseller==="true"? true:false,
             date: Date.now()
         }
-        const newProduct = new Productmodel(productdata)
+        const newProduct = new productModel(productdata)
 
         await newProduct.save();
 
@@ -47,7 +47,7 @@ export const removeProduct = async (req, res) => {
 
     try {
     
-        const deletedProduct = await Productmodel.findByIdAndDelete(req.body.id);
+        const deletedProduct = await productModel.findByIdAndDelete(req.body.id);
         if (!deletedProduct) {
           return res.status(404).json({success:false, error: "Product not found" });
         } 
@@ -62,7 +62,7 @@ export const removeProduct = async (req, res) => {
 export const listProduct = async (req, res) => {
 
     try {
-        const products = await Productmodel.find().sort({ date: -1 }); // latest first
+        const products = await productModel.find().sort({ date: -1 }); // latest first
         res.status(200).json({success:true ,products});
       } catch (error) {
         res.status(500).json({success:false, error: "Internal Server Error", details: error.message });
@@ -75,7 +75,7 @@ export const singleProduct = async (req, res) => {
   try {
     const { productid } = req.body;
 
-    const product = await Productmodel.findById(productid);
+    const product = await productModel.findById(productid);
     if (!product) {
       return res.status(404).json({ success:false, error: "Product not found" });
     }

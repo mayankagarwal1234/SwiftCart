@@ -1,25 +1,25 @@
 import express from "express";
-import {placeOrderStripe,placeOrderRazorpay,placeOrderCOD,allorders,updatestatus,userorders, verifystripe, verifyrazorpay } from "../controllers/ordercontroller.js";
+import {placeOrderStripe,placeOrderRazorpay,placeOrderCOD,allorders,updatestatus,userorders, verifystripe, verifyrazorpay } from "../controllers/orderController.js";
 import adminauth  from '../middleware/adminauth.js'
 import authuser from "../middleware/auth.js";
 
-const orderrouter = express.Router();
+const orderRouter = express.Router();
 
 //Admin features
-orderrouter.post("/list", adminauth, allorders);
-orderrouter.post("/status", adminauth, updatestatus);
+orderRouter.post("/list", adminauth, allorders);
+orderRouter.post("/status", adminauth, updatestatus);
 
 //Payment features
-orderrouter.post("/place", authuser, placeOrderCOD);
-orderrouter.post("/stripe", authuser, placeOrderStripe);
-orderrouter.post("/razorpay", authuser, placeOrderRazorpay);
+orderRouter.post("/place", authuser, placeOrderCOD);
+orderRouter.post("/stripe", authuser, placeOrderStripe);
+orderRouter.post("/razorpay", authuser, placeOrderRazorpay);
 
 //User features
-orderrouter.post("/userorders", authuser, userorders);
+orderRouter.post("/userorders", authuser, userorders);
 
 //verify payment
-orderrouter.post("/verifystripe", authuser, verifystripe);
-orderrouter.post("/verifyrazorpay", authuser, verifyrazorpay);
+orderRouter.post("/verifystripe", authuser, verifystripe);
+orderRouter.post("/verifyrazorpay", authuser, verifyrazorpay);
 
 
-export default orderrouter;
+export default orderRouter;
