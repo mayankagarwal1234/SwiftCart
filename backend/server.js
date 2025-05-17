@@ -32,6 +32,8 @@ app.get('/', (req, res) => {
  app.use('/api/order',orderrouter)
 
 // Start the Server
-app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
-});
+//app.listen(PORT, () => {
+  //console.log(`✅ Server running at http://localhost:${PORT}`);
+//});
+
+export default app;
