@@ -71,7 +71,6 @@ export const getSingleProduct = async (req, res) => {
     const { productid } = req.body;
     const product = await productModel.findById(productid);
 
-<<<<<<< HEAD:backend/controllers/productcontroller.js
     if (!product) {
       return res.status(404).json({ success: false, error: "Product not found" });
     }
@@ -81,6 +80,3 @@ export const getSingleProduct = async (req, res) => {
     res.status(500).json({ success: false, error: "Internal Server Error", details: error.message });
   }
 };
-=======
-}
->>>>>>> ea0eed6171878460b8a0d8284f21ce0110e2a0c8:backend/controllers/productController.js
