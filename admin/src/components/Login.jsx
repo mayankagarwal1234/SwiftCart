@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { backendUrl } from "../App";
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 const Login = ({ settoken }) => {
   const [email, setemail] = useState("");
